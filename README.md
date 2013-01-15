@@ -1,6 +1,6 @@
 ## Lingr push
 
-Lingr bot callback handler to send push notifications via Pushover
+Lingr bot callback handler to send push notifications via Pushover. Deploy it on heroku and set `/callback` path to the bot's callback URL.
 
 ## Environment variables
 
