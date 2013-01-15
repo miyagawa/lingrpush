@@ -37,7 +37,7 @@ post '/callback' do
   body = JSON.parse(request.body.read)
   body['events'].each do |event|
     if event['message'] && /^@(\S+)/ === event['message']['text']
-      if user = User.find($1)
+      if user = User.find($1.downcase)
         user.notify(event['message']['text'], event['message']['nickname'])
       end
     end
