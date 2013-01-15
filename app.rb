@@ -38,7 +38,7 @@ post '/callback' do
   body['events'].each do |event|
     if event['message'] && /^@(\S+)/ === event['message']['text']
       if user = User.find($1)
-        user.notify(event['message']['text'], "#{event['message']['nickname']} (#{event['message']['room']})")
+        user.notify(event['message']['text'], event['message']['nickname'])
       end
     end
   end
